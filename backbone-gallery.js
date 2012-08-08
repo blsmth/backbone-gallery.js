@@ -62,7 +62,6 @@ window.FullView = Backbone.View.extend({
   selectPhoto: function(photo){
     this.model = photo;
     this.render();
-    console.log(photo);
   },
 
   render: function(){
@@ -159,7 +158,6 @@ window.GalleryView = Backbone.View.extend({
         slug: _album.slug
       });
 
-      console.log(self.gallery.base_dir + album.get('slug'));
 
       // load photos into Photos collection
       album.photos = new Photos();
