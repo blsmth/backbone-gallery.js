@@ -94,7 +94,7 @@ window.ThumbView = Backbone.View.extend({
 
 window.GalleryRouter = Backbone.Router.extend({
   routes: {
-    "album/:slug":                 "loadAlbum",    // #album/lucas
+    "album/:slug":                 "loadAlbum",    // #album/slug
     "*path": "index"
   },
 
@@ -178,11 +178,6 @@ window.GalleryView = Backbone.View.extend({
       album_id += 1;
     });
 
-
-
-
-    // dispatcher.trigger('thumb:selected', this.collection.get(1));
-
   },
 
   render: function(){
@@ -208,8 +203,8 @@ window.GalleryView = Backbone.View.extend({
     });
 
 
+    // set fullsize image to first photo in album
     this.fullsize.selectPhoto(this.album.photos.get(1));
-
 
   }
 });
@@ -219,28 +214,14 @@ window.GalleryView = Backbone.View.extend({
 gallery = {
     base_dir:  '/media/photos/',
     albums: [
-      { title: 'Lucas',
-        slug: 'lucas',
-        description: 'My baby boy.  Almost a year old.',
-        photos: [
-          { filename: 'IMG_4423.jpg', title: 'Oh hai!' },
-          { filename: 'IMG_4433.jpg', title: 'Friends' },
-          { filename: 'IMG_4505.jpg', title: 'Sleeping with Sock Monkey' },
-          { filename: 'IMG_4369.jpg', title: 'Weeeeee' },
-          { filename: 'IMG_4333.jpg', title: 'First burrito' }
-        ]
-      },
       { title: 'House',
         slug: 'house',
-        description: 'Some pictures of our small ranch.',
+        description: 'images of my house',
         photos: [
-          { filename: 'IMG_4387.jpg', title: 'We got new windows' },
-          { filename: 'IMG_4391.jpg', title: 'New Bay Window' },
-          { filename: 'IMG_4393.jpg', title: 'Garden post tree felling' },
-          { filename: 'IMG_4397.jpg', title: 'Hose station' }
+          { filename: '', title: '' },
+          { filename: '', title: '' }
         ]
-
-    }
+      }
     ]
   };
 
